@@ -1,0 +1,36 @@
+  # Random Sampling
+  # Selecting list Wards in Tanzania for Rural Water and Sanitation Project - Ministry of Water and Irrigation(MoWI)
+  # Date May, 2019
+  # W. J. Simbila
+
+  # Install and load required packages -----------------------------------------
+  Install.packages("downloader", "sp", "dplyr"), dependencies = TRUE)
+  suppressPackageStartupMessages({
+      require(downloader)
+      require(sp)
+      require(raster)
+      require(dplyr)
+      })
+
+  # Set working directory ------------------------------------------------------
+  setwd("~")
+  dir.create("TZ_MoWI", showWarnings = FALSE)
+  setwd("./TZ_MoWI")
+  
+  # Load data into R -----------------------------------------------------------
+  tz_data <- read.csv("TZ_sample.csv", header = T, sep = ",")
+    
+  # Set seeds (For reproducible results) ---------------------------------------
+  set.seed(12345)
+     
+  # Random Sampling ------------------------------------------------------------
+  tz_sample <- sample_n(tz_data, 500) #  sample size
+  
+  # check dataframe, you can skip this -----------------------------------------
+  tz_sample
+    
+  # Write a dataframe file of randomly selected samples ------------------------
+  dir.create("Results", showWarnings = F)
+  write.csv(tz_sample, "./Results/MoWI_survey.csv", row.names = F)
+    
+    
