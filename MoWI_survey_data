@@ -1,7 +1,8 @@
   # Random Sampling
-  # Selecting list of Wards in Tanzania for Rural Water and Sanitation Project - Ministry of Water and Irrigation(MoWI)
-  # Date May, 2019
-  # W. J. Simbila
+  # Purpose: Create a list of Tanzania Wards selected randomly 
+  # Project Name: Rural Water and Sanitation Project - Ministry of Water and Irrigation(MoWI)
+  # Date: May, 2019
+  # Author: W. J. Simbila
 
   # Install and load required packages -----------------------------------------
   Install.packages("downloader", "sp", "dplyr"), dependencies = TRUE)
